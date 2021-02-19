@@ -10,6 +10,7 @@ h2 {
 .nightmode {
   display: flex;
   flex-direction: column;
+
   height: 100vh;
   margin: 2%;
 }
@@ -17,11 +18,7 @@ body {
   background-color: whitesmoke;
   transition: 0.5s background ease;
 }
-body.dark {
-  background-color: rgb(34, 34, 34);
-  color: palevioletred;
-  transition: 0.5s background ease;
-}
+
 .checkbox {
   opacity: 0;
   position: absolute;
@@ -42,22 +39,31 @@ body.dark {
 }
 .bar {
   background-color: white;
+
   position: absolute;
+
   height: 23px;
   width: 23px;
   border-radius: 50%;
+
   transition: transform 0.3s linear;
 }
-.fa-sun {
-  color: rgb(251, 227, 89);
-}
+.fa-sun,
 .fa-moon {
   color: rgb(251, 227, 89);
 }
+/* color alternative for dark mode when checked*/
+body.dark {
+  background-color: rgb(34, 34, 34);
+  color: palevioletred;
+  transition: 0.5s background ease;
+}
+
 .checkbox:checked ~ .label .bar {
   transform: translateX(48px);
   background-color: rgb(56, 56, 56);
 }
+
 .checkbox:checked ~ .label {
   background-color: palevioletred;
   transition: 0.3s all ease;
